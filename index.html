@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO meta tags -->
+  <meta name="description"
+    content="Gerador de Etiqueta Correios — crie, pré-visualize e imprima etiquetas com rapidez. Preenchimento automático por CEP." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://example.com/gerador-etiqueta" />
+  <meta name="theme-color" content="#0d6efd" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gerador de Etiqueta Correios" />
+  <meta property="og:description"
+    content="Crie e imprima etiquetas Correios com preenchimento automático por CEP. Rápido, prático e responsivo." />
+  <meta property="og:url" content="https://example.com/gerador-etiqueta" />
+  <meta property="og:image" content="https://example.com/imagem.png" />
+  <meta property="og:site_name" content="Gerador de Etiqueta" />
+
+  <title>ETIQUETA CORREIOS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <main class="container py-4" role="main" aria-labelledby="page-title">
+    <header class="hero d-flex align-items-center justify-content-between" role="banner">
+      <div>
+        <h1 id="page-title" class="h3 mb-1">Gerador de Etiqueta</h1>
+        <p class="mb-0 text-white-50">Crie e imprima etiquetas Correios rapidamente</p>
+      </div>
+      <div class="d-none d-md-block">
+        <img src="2dff4612-d823-4987-a1e9-5784661a83f8.png" alt="ícone de envelope" width="72" style="opacity:.95" />
+      </div>
+    </header>
+
+    <div class="row g-3">
+      <!-- Destinatário -->
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-3 h-100">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Destinatário</h5>
+            <form class="row g-2">
+              <div class="col-12">
+                <label for="nomeDestinatario" class="form-label">Nome</label>
+                <input type="text" id="nomeDestinatario" class="form-control" placeholder="Nome" required />
+              </div>
+
+              <div class="col-12 col-sm-7">
+                <label for="cepDestinatario" class="form-label">CEP</label>
+                <div class="input-group">
+                  <input type="text" id="cepDestinatario" class="form-control" placeholder="CEP"
+                    aria-label="CEP do destinatário">
+                  <button class="btn btn-outline-secondary" id="buscarCepDestinatario" type="button"
+                    aria-label="Buscar CEP do destinatário">Buscar CEP</button>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-5">
+                <label for="numeroEnderecoDestinatario" class="form-label">Nº</label>
+                <input type="text" id="numeroEnderecoDestinatario" class="form-control" placeholder="Nº" required />
+              </div>
+
+              <div class="col-12">
+                <label for="enderecoDestinatario" class="form-label">Endereço</label>
+                <input type="text" id="enderecoDestinatario" class="form-control" placeholder="Endereço" disabled />
+              </div>
+
+              <div class="col-12">
+                <label for="complementoEnderecoDestinatario" class="form-label">Complemento</label>
+                <input type="text" id="complementoEnderecoDestinatario" class="form-control"
+                  placeholder="Complemento" />
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <label for="bairroDestinatario" class="form-label">Bairro</label>
+                <input type="text" id="bairroDestinatario" class="form-control" placeholder="Bairro" disabled />
+              </div>
+
+              <div class="col-8 col-sm-5">
+                <label for="cidadeDestinatario" class="form-label">Cidade</label>
+                <input type="text" id="cidadeDestinatario" class="form-control" placeholder="Cidade" disabled />
+              </div>
+
+              <div class="col-4 col-sm-3">
+                <label for="ufDestinatario" class="form-label">U.F.</label>
+                <input type="text" id="ufDestinatario" class="form-control" placeholder="U.F." disabled />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Remetente -->
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-3 h-100">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Remetente</h5>
+            <form class="row g-2">
+              <div class="col-12">
+                <label for="nomeRemetente" class="form-label">Nome</label>
+                <input type="text" id="nomeRemetente" class="form-control" placeholder="Nome" required />
+              </div>
+
+              <div class="col-12 col-sm-7">
+                <label for="cepRemetente" class="form-label">CEP</label>
+                <div class="input-group">
+                  <input type="text" id="cepRemetente" class="form-control" placeholder="CEP"
+                    aria-label="CEP do remetente">
+                  <button class="btn btn-outline-secondary" id="buscarCepRemetente" type="button"
+                    aria-label="Buscar CEP do remetente">Buscar CEP</button>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-5">
+                <label for="numeroEnderecoRemetente" class="form-label">Nº</label>
+                <input type="text" id="numeroEnderecoRemetente" class="form-control" placeholder="Nº" required />
+              </div>
+
+              <div class="col-12">
+                <label for="enderecoRemetente" class="form-label">Endereço</label>
+                <input type="text" id="enderecoRemetente" class="form-control" placeholder="Endereço" disabled />
+              </div>
+
+              <div class="col-12">
+                <label for="complementoEnderecoRemetente" class="form-label">Complemento</label>
+                <input type="text" id="complementoEnderecoRemetente" class="form-control" placeholder="Complemento" />
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <label for="bairroRemetente" class="form-label">Bairro</label>
+                <input type="text" id="bairroRemetente" class="form-control" placeholder="Bairro" disabled />
+              </div>
+
+              <div class="col-8 col-sm-5">
+                <label for="cidadeRemetente" class="form-label">Cidade</label>
+                <input type="text" id="cidadeRemetente" class="form-control" placeholder="Cidade" disabled />
+              </div>
+
+              <div class="col-4 col-sm-3">
+                <label for="ufRemetente" class="form-label">U.F.</label>
+                <input type="text" id="ufRemetente" class="form-control" placeholder="U.F." disabled />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex flex-column flex-row align-items-center justify-content-between gap-3">
+          <div class="d-flex gap-2">
+            <button type="button" id="btnGerarEtiqueta" class="btn btn-light btn-primary-lg"
+              aria-label="Gerar etiqueta">Gerar Etiqueta <i class="bi bi-arrow-clockwise"></i></button>
+            <button type="button" id="btnImprimirEtiqueta" class="btn btn-light btn-primary-lg"
+              aria-label="Imprimir etiqueta">Imprimir <i class="bi bi-printer"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card card-custom p-3">
+          <div class="card-body">
+            <h6 class="mb-3">Pré-visualização</h6>
+            <canvas width="1000" height="1000" id="canvasEtiqueta">Seu navegador não suporta canvas.</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
