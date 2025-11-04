@@ -91,21 +91,31 @@ function GerarEtiqueta() {
     10,
     170,
   );
+  ctx.fillText(
+    `${document.getElementById("cepDestinatario").value}`,
+    10,
+    200,
+  );
   ctx.beginPath();
-  ctx.moveTo(20, 210);
-  ctx.lineTo(980, 210);
+  ctx.moveTo(20, 240);
+  ctx.lineTo(980, 240);
   ctx.stroke();
-  ctx.fillText("Remetente:", 10, 250);
-  ctx.fillText(document.getElementById("nomeRemetente").value, 10, 280);
+  ctx.fillText("Remetente:", 10, 280);
+  ctx.fillText(document.getElementById("nomeRemetente").value, 10, 310);
   ctx.fillText(
     `${document.getElementById("enderecoRemetente").value}, ${document.getElementById("numeroEnderecoRemetente").value}, ${document.getElementById("complementoEnderecoRemetente").value}`,
     10,
-    310,
+    340,
   );
   ctx.fillText(
     `${document.getElementById("bairroRemetente").value} - ${document.getElementById("cidadeRemetente").value} - ${document.getElementById("ufRemetente").value}`,
     10,
-    340,
+    370,
+  );
+  ctx.fillText(
+    `${document.getElementById("cepRemetente").value}`,
+    10,
+    400,
   );
 }
 
