@@ -74,49 +74,23 @@ function GerarEtiqueta() {
     uf: document.getElementById("ufRemetente").value
   };
 
-  const canvas = document.getElementById("canvasEtiqueta");
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let html = `
+<div>
+<p><strong>Destinatário:</strong></p>
+<p>${destinatario.nome}</p>
+<p>${destinatario.endereco}, ${destinatario.numero}${destinatario.complemento ? ', ' + destinatario.complemento : ''}</p>
+<p>${destinatario.bairro} - ${destinatario.cidade} - ${destinatario.uf}</p>
+<p>${destinatario.cep}</p>
+<hr>
+<p><strong>Remetente:</strong></p>
+<p>${remetente.nome}</p>
+<p>${remetente.endereco}, ${remetente.numero}${remetente.complemento ? ', ' + remetente.complemento : ''}</p>
+<p>${remetente.bairro} - ${remetente.cidade} - ${remetente.uf}</p>
+<p>${remetente.cep}</p>
+</div>
+`;
 
-  ctx.font = "24px Arial";
-  ctx.fillText("Destinatário:", 10, 80);
-  ctx.fillText(destinatario.nome, 10, 110);
-  ctx.fillText(
-    `${document.getElementById("enderecoDestinatario").value}, ${document.getElementById("numeroEnderecoDestinatario").value}, ${document.getElementById("complementoEnderecoDestinatario").value}`,
-    10,
-    140,
-  );
-  ctx.fillText(
-    `${document.getElementById("bairroDestinatario").value} - ${document.getElementById("cidadeDestinatario").value} - ${document.getElementById("ufDestinatario").value}`,
-    10,
-    170,
-  );
-  ctx.fillText(
-    `${document.getElementById("cepDestinatario").value}`,
-    10,
-    200,
-  );
-  ctx.beginPath();
-  ctx.moveTo(20, 240);
-  ctx.lineTo(980, 240);
-  ctx.stroke();
-  ctx.fillText("Remetente:", 10, 280);
-  ctx.fillText(document.getElementById("nomeRemetente").value, 10, 310);
-  ctx.fillText(
-    `${document.getElementById("enderecoRemetente").value}, ${document.getElementById("numeroEnderecoRemetente").value}, ${document.getElementById("complementoEnderecoRemetente").value}`,
-    10,
-    340,
-  );
-  ctx.fillText(
-    `${document.getElementById("bairroRemetente").value} - ${document.getElementById("cidadeRemetente").value} - ${document.getElementById("ufRemetente").value}`,
-    10,
-    370,
-  );
-  ctx.fillText(
-    `${document.getElementById("cepRemetente").value}`,
-    10,
-    400,
-  );
+  document.getElementById("etiquetaHTML").innerHTML = html;
 }
 
 function ImprimirEtiqueta() {

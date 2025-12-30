@@ -38,7 +38,7 @@ label.form-label {
     border-radius: 10px;
 }
 
-#canvasEtiqueta {
+#etiquetaHTML {
     width: 100%;
     max-width: 700px;
     height: auto;
@@ -47,6 +47,9 @@ label.form-label {
     background: white;
     display: block;
     margin: 0 auto;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 24px;
 }
 
 @media (max-width:767px) {
@@ -60,12 +63,12 @@ label.form-label {
         visibility: hidden;
     }
 
-    #canvasEtiqueta,
-    #canvasEtiqueta * {
+    #etiquetaHTML,
+    #etiquetaHTML * {
         visibility: visible;
     }
 
-    #canvasEtiqueta {
+    #etiquetaHTML {
         position: fixed;
         left: 0;
         top: 0;
